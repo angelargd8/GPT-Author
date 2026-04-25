@@ -1,10 +1,26 @@
-# Codex-Author: ChatGPT Academic Research Assistant
+#   GPT-Author: ChatGPT Academic Research Assistant
 
 This repo adapts the original Claude-oriented scaffold into a ChatGPT/Codex research assistant. The main ChatGPT instructions live in [`AGENTS.md`](AGENTS.md). The Codex layer lives in [`.codex/`](.codex/) and includes:
 
 - `skills/`: `/new-project`, `/discover`, `/strategize`, `/analyze`, `/write`, `/review`, `/revise`, `/talk`, `/submit`, `/tools`, `/checkpoint`, plus the simpler academic workflows `/interview-me`, `/research-ideation`, `/lit-review`, `/data-analysis`, and `/paper-draft`.
 - `references/`: domain profile, journal profiles, personal style guide, coding standards, and migrated agent profiles.
 - `rules/`: workflow, content, revision, quality, and working-paper standards adapted for Codex.
+
+
+| Comando | Comportamiento esperado |
+|---|---|
+| `/new-project [topic]` | Inicia el pipeline completo desde una idea. Pregunta campo, objetivo, audiencia, estado del proyecto y datos disponibles. Luego produce una especificación inicial: pregunta, motivación, literatura relevante a buscar, datos posibles, estrategia tentativa, estructura del paper y próximos pasos. No debe fingir que completó todo el paper. |
+| `/discover interview` | Entrevista al usuario paso a paso para convertir una idea vaga en una especificación clara. Pregunta por fenómeno, pregunta, mecanismo, datos, método, contribución y riesgos. Output: research spec estructurada. |
+| `/discover lit` | Apoya la revisión de literatura. Pide tema, disciplina, tipo de paper y referencias conocidas. Si tiene web, verifica literatura; si no, marca referencias como “a buscar/verificar”. Output: mapa de literatura, debates, gaps y posicionamiento. |
+| `/discover data` | Explora datos posibles. Identifica unidad de análisis, variables necesarias, población, periodo, geografía y restricciones de acceso. Output: datasets candidatos, fortalezas, límites, feasibility grade y riesgos de medición/identificación. |
+| `/strategize [question]` | Diseña la estrategia del paper. Clasifica el tipo de paper: descriptivo, causal, estructural o teoría+empírico. Output: estimando, supuestos, modelo tentativo, amenazas, checks de robustez y qué evidencia haría creíble el argumento. |
+| `/analyze [dataset]` | Planea o interpreta análisis empírico. Si hay datos subidos, describe estructura, variables, limpieza, descriptivos, modelos y robustez. Si no hay datos, produce un plan de análisis. No debe inventar resultados. |
+| `/write [section]` | Redacta o revisa una sección: abstract, introducción, literatura, teoría, datos, métodos, resultados o conclusión. Primero identifica argumento principal, función de párrafos y evidencia disponible. Output: diagnóstico, borrador o versión revisada. |
+| `/review [file]` | Actúa como revisor crítico. Separa problemas de argumento, estructura, evidencia, método y estilo. Si es paper completo, puede dar score o prioridades. No debe reescribir todo salvo que se lo pidan. |
+| `/revise [report]` | Convierte comentarios, referee reports o feedback en plan de revisión. Clasifica comentarios como críticos, importantes, menores o de gusto; propone respuesta; sugiere cambios al manuscrito y, si aplica, borrador de response letter. |
+| `/talk [format]` | Convierte el paper en una presentación. Pregunta formato si no está claro: seminario, conferencia, job market o lightning. Output: estructura de slides, narrativa, orden de resultados y notas de presentación. |
+| `/submit [journal]` | Hace checklist pre-envío. Evalúa fit con journal, claridad de contribución, solidez metodológica, estado de tablas/figuras, bibliografía, replicabilidad y riesgos de rechazo. No debe decir “listo para enviar” sin condiciones claras. |
+| `/tools [subcommand]` | En ChatGPT da instrucciones o checklist para tareas operativas. En Codex local sí puede ejecutar cosas como compilar, validar bib o revisar git. En GPT normal, explica pasos y no debe pretender haber corrido comandos. |
 
 
 ---
