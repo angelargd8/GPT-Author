@@ -3,11 +3,11 @@ name: discover
 description: "Descubrir y formalizar proyectos de investigacion: entrevista, revision de literatura, busqueda de datos e ideacion. Usar con /discover o tareas tempranas de diseno del paper."
 ---
 
-## Codex Adaptation
+## ChatGPT Adaptation
 
-- Ejecuta el workflow localmente con las herramientas disponibles de Codex.
-- Cuando el texto original diga que se debe consultar un agente, lee el perfil equivalente en `.codex/references/agent-profiles/` y aplica ese rol como checklist o modo de trabajo.
-- No dependas de hooks, settings ni APIs propias de Claude.
+- Aplica el workflow dentro de ChatGPT usando solo las capacidades realmente disponibles en la conversacion.
+- Cuando una tarea mencione un rol especializado, aplica ese rol como checklist o modo de trabajo.
+- No dependas de hooks, settings ni APIs locales; si no tienes acceso real a herramientas, entrega checklist o instrucciones verificables.
 - Si una tarea requiere literatura reciente, citas especificas o informacion cambiante, verifica con fuentes externas antes de citar.
 
 # Discover
@@ -60,7 +60,7 @@ After interview (5-8 exchanges), produce three outputs:
 ## Open Questions — [issues needing further thought]
 ```
 
-**Output 2: Domain Profile** → `.codex/references/domain-profile.md` (if still template)
+**Output 2: Domain Profile** → `03-domain-profile.md` (if still template)
 Fill in field, target journals, common data sources, identification strategies, field conventions, seminal references, and referee concerns based on the interview.
 
 **Output 3: Decision Record** → `quality_reports/decisions/discovery_[topic].md`
@@ -78,7 +78,7 @@ Search and synthesize academic literature.
 **Output:** Annotated bibliography + BibTeX entries + frontier map
 
 Workflow:
-1. Read `.codex/references/domain-profile.md` for field journals and seminal references
+1. Read `03-domain-profile.md` for field journals and seminal references
 2. Check `master_supporting_docs/` for uploaded papers
 3. Read `bibliography_base.bib` for papers already in the project
 4. Route Librarian to search:
@@ -118,7 +118,7 @@ Find and assess datasets for the research question.
 
 Workflow:
 1. Read research spec and strategy memo if they exist
-2. Read `.codex/references/domain-profile.md` for common data sources in the field
+2. Read `03-domain-profile.md` for common data sources in the field
 3. Understand what variables are needed: treatment, outcome, controls, time period, geography
 4. Route Explorer to search across source categories:
    - Public microdata (CPS, ACS, NHIS, MEPS, etc.)
@@ -173,5 +173,5 @@ Generate:
 - **Effect sizes matter:** Report magnitudes, not just signs. Note identification strategy for every paper.
 - **Data feasibility matters:** A perfect dataset you can't access is useless. Always assign A/B/C/D grades.
 - **5-point data critique:** Measurement validity, sample selection, external validity, identification compatibility, known issues. Never skip this.
-- **Domain-profile aware:** Always read `.codex/references/domain-profile.md` first for field calibration.
+- **Domain-profile aware:** Always read `03-domain-profile.md` first for field calibration.
 - **Worker-critic pairing:** Librarian + librarian-critic, Explorer + explorer-critic. Never skip the critic.

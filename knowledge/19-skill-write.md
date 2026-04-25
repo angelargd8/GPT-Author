@@ -3,11 +3,11 @@ name: write
 description: "Redactar, revisar o limpiar secciones academicas con estructura argumental y estilo sobrio. Usar con /write o tareas de escritura del paper."
 ---
 
-## Codex Adaptation
+## ChatGPT
 
-- Ejecuta el workflow localmente con las herramientas disponibles de Codex.
-- Cuando el texto original diga que se debe consultar un agente, lee el perfil equivalente en `.codex/references/agent-profiles/` y aplica ese rol como checklist o modo de trabajo.
-- No dependas de hooks, settings ni APIs propias de Claude.
+- Aplica el workflow dentro de ChatGPT usando solo las capacidades realmente disponibles en la conversacion.
+- Cuando una tarea mencione un rol especializado, aplica ese rol como checklist o modo de trabajo.
+- No dependas de hooks, settings ni APIs locales; si no tienes acceso real a herramientas, entrega checklist o instrucciones verificables.
 - Si una tarea requiere literatura reciente, citas especificas o informacion cambiante, verifica con fuentes externas antes de citar.
 
 # Write
@@ -34,7 +34,7 @@ Before drafting, read all available context:
 1. Read existing paper draft in `paper/` (if it exists)
 2. Read `master_supporting_docs/` for notes, outlines, research specs
 3. Read most recent `quality_reports/research_spec_*.md` or `quality_reports/lit_review_*.md`
-4. Read `.codex/references/domain-profile.md` for field conventions
+4. Read `03-domain-profile.md` for field conventions
 5. Check `Bibliography_base.bib` for available citations
 6. Scan `paper/tables/` and `paper/figures/` for generated output
 7. Read `quality_reports/results_summary.md` if it exists (from Coder)
@@ -91,7 +91,7 @@ Present each section for feedback. Flag items that need attention:
 
 ### `/write style-guide [paper-dir]` — Extract Personal Voice
 
-One-shot extraction of the user's writing voice from their published or drafted papers. Produces `.codex/references/personal-style-guide.md`, which the writer auto-loads on every subsequent invocation.
+One-shot extraction of the user's writing voice from their published or drafted papers. Produces `04-personal-style-guide.md`, which the writer auto-loads on every subsequent invocation.
 
 **When to run:**
 - Once at the start of a project, after pointing at a directory of the user's prior papers
@@ -100,7 +100,7 @@ One-shot extraction of the user's writing voice from their published or drafted 
 **Input:** `$ARGUMENTS` — path to a directory containing prior papers (.tex or .pdf). If omitted, defaults to `master_supporting_docs/` and scans for .tex/.pdf files.
 
 **Agent:** Writer (style-extraction mode)
-**Output:** `.codex/references/personal-style-guide.md`
+**Output:** `04-personal-style-guide.md`
 
 Workflow:
 1. **Discover corpus.** List .tex and .pdf files in the target directory. If fewer than 2 papers found, flag and ask before proceeding (style extraction on a single paper overfits).
@@ -119,7 +119,7 @@ Workflow:
    - Hedging and comparison patterns
    - Citation conventions (textual vs. parenthetical split; papers-per-claim)
    - Tone markers and anti-patterns already stripped
-4. **Write to `.codex/references/personal-style-guide.md`.** Fill every template section with quoted examples from the corpus. Never invent patterns — if a section has no evidence, write "[insufficient corpus evidence]".
+4. **Write to `04-personal-style-guide.md`.** Fill every template section with quoted examples from the corpus. Never invent patterns — if a section has no evidence, write "[insufficient corpus evidence]".
 5. **Present summary.** One-paragraph recap of the voice profile: sentence length, passive rate, signature lexicon, distinguishing tone markers. User confirms before the guide takes effect on subsequent `/write` calls.
 
 Principles for the extraction:
@@ -167,7 +167,7 @@ Strips 24 patterns across 4 categories:
 ---
 
 ## Principles
-- **This is the user's paper, not ChatGPT/Codex's.** Match their voice and style.
+- **This is the user's paper, not ChatGPT's.** Match their voice and style.
 - **Never fabricate results.** Use TBD placeholders.
 - **Citations must be verifiable.** Only cite confirmed papers.
 - **Argument moves first, cleanup second.** Draft with structure, then strip AI patterns.

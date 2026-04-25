@@ -1,4 +1,4 @@
-﻿01-codex-readme.md
+01-chatgpt-readme.md
 02-workflow-quick-ref.md
 03-domain-profile.md
 04-personal-style-guide.md

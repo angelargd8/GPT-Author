@@ -346,7 +346,7 @@ Female (\%)             &  47.8      &  48.6    &  -0.8       &  (1.2)  &  0.505
 
 **Step 1: Receive PDF Upload**
 - User uploads PDF to `master_supporting_docs/supporting_papers/` or `supporting_slides/`
-- ChatGPT/Codex DOES NOT attempt to read it directly
+- ChatGPT DOES NOT attempt to read it directly
 
 **Step 2: Check PDF Properties**
 ```bash

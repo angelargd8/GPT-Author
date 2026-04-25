@@ -3,11 +3,11 @@ name: strategize
 description: "Disenar estrategia empirica, identificacion, pre-analysis plan o teoria formal para papers academicos. Usar con /strategize."
 ---
 
-## Codex Adaptation
+## ChatGPT Adaptation
 
-- Ejecuta el workflow localmente con las herramientas disponibles de Codex.
-- Cuando el texto original diga que se debe consultar un agente, lee el perfil equivalente en `.codex/references/agent-profiles/` y aplica ese rol como checklist o modo de trabajo.
-- No dependas de hooks, settings ni APIs propias de Claude.
+- Aplica el workflow dentro de ChatGPT usando solo las capacidades realmente disponibles en la conversacion.
+- Cuando una tarea mencione un rol especializado, aplica ese rol como checklist o modo de trabajo.
+- No dependas de hooks, settings ni APIs locales; si no tienes acceso real a herramientas, entrega checklist o instrucciones verificables.
 - Si una tarea requiere literatura reciente, citas especificas o informacion cambiante, verifica con fuentes externas antes de citar.
 
 # Strategize
@@ -50,7 +50,7 @@ Proceeding to strategy design.
 
 If research spec, literature review, or data assessment are missing, the Strategist proceeds with ASSUMED placeholders — but flags each clearly.
 
-2. Read .codex/references/domain-profile.md for common identification strategies in the field
+2. Read 03-domain-profile.md for common identification strategies in the field
 3. Route Strategist to produce:
    - Strategy memo: design choice, estimand, assumptions, comparison group
    - Pseudo-code: implementation sketch
@@ -226,7 +226,7 @@ Proceeding to theory drafting.
 
 If strategy memo or paper type is missing, the Theorist flags it and asks before proceeding.
 
-2. Read `.codex/references/domain-profile.md` for the Theoretical Foundational References table and Author Team table.
+2. Read `03-domain-profile.md` for the Theoretical Foundational References table and Author Team table.
 3. Route **Theorist** to produce:
    - `quality_reports/theory/[topic]/theory_memo.md`
    - `quality_reports/theory/[topic]/assumptions.tex`

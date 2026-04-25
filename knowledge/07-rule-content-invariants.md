@@ -42,7 +42,7 @@ These are non-negotiable. Every agent checks against them. Violations are deduct
 
 **INV-17.** No growing vectors/lists in loops. Pre-allocate result containers or use vectorized operations.
 
-**INV-18.** Output files go to the path specified by the Output Organization setting in `AGENTS.md`.
+**INV-18.** Output files go to the path specified by the Output Organization setting in the GPT instructions.
 
 **INV-19.** No prohibited functions: `setwd()` / `os.chdir()` / `cd()`, `rm(list = ls())`, `install.packages()` in scripts, `attach()` / `detach()`.
 

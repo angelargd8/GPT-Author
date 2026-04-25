@@ -3,11 +3,11 @@ name: review
 description: "Revisar papers, codigo, literatura, estrategia empirica o paquetes de investigacion con foco critico. Usar con /review o cuando el usuario pida evaluacion."
 ---
 
-## Codex Adaptation
+## ChatGPT Adaptation
 
-- Ejecuta el workflow localmente con las herramientas disponibles de Codex.
-- Cuando el texto original diga que se debe consultar un agente, lee el perfil equivalente en `.codex/references/agent-profiles/` y aplica ese rol como checklist o modo de trabajo.
-- No dependas de hooks, settings ni APIs propias de Claude.
+- Aplica el workflow dentro de ChatGPT usando solo las capacidades realmente disponibles en la conversacion.
+- Cuando una tarea mencione un rol especializado, aplica ese rol como checklist o modo de trabajo.
+- No dependas de hooks, settings ni APIs locales; si no tienes acceso real a herramientas, entrega checklist o instrucciones verificables.
 - Si una tarea requiere literatura reciente, citas especificas o informacion cambiante, verifica con fuentes externas antes de citar.
 
 # Review
@@ -59,7 +59,7 @@ The editor:
 2. Searches the literature via WebSearch to verify novelty claims
 3. Decides: **DESK REJECT** or **SEND TO REFEREES**
 4. If desk reject → report with reasons + suggested alternative journals. Done.
-5. If send to referees → editor selects referee dispositions and pet peeves from the journal's **Referee pool** (see .codex/references/journal-profiles.md)
+5. If send to referees → editor selects referee dispositions and pet peeves from the journal's **Referee pool** (see 05-journal-profiles.md)
 
 #### Phase 2: Referee Reports
 The editor's referee assignment specifies for each referee:
@@ -69,7 +69,7 @@ The editor's referee assignment specifies for each referee:
 
 Route **domain-referee** and **methods-referee** in parallel, each receiving:
 1. The paper manuscript
-2. The target journal name (for .codex/references/journal-profiles.md calibration)
+2. The target journal name (for 05-journal-profiles.md calibration)
 3. Their assigned disposition and pet peeves, injected into the prompt:
 
 ```
@@ -147,7 +147,7 @@ This is for pre-submission stress testing. If the paper survives two hostile ref
 
 **Step 1: Mechanical lint** — run the grep-based linter first:
 ```bash
-"$CLAUDE_PROJECT_DIR"/.codex/hooks/lint-scripts.sh [file]
+Run the relevant local linter only if the user provides tool access; otherwise provide a validation checklist.
 ```
 Include the lint report in the coder-critic's input so it can skip already-flagged patterns and focus on judgment calls.
 
@@ -246,7 +246,7 @@ Route **writer-critic** standalone:
 1. Auto-detect source language from file extension
 2. Route **Coder** in replication mode — re-implement in target language
 3. **coder-critic** reviews both implementations
-4. Compare numerical outputs per `.codex/references/domain-profile.md` Quality Tolerance Thresholds
+4. Compare numerical outputs per `03-domain-profile.md` Quality Tolerance Thresholds
 5. Save replicated script and comparison report
 
 ---

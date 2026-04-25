@@ -1,6 +1,6 @@
 # Workflow Quick Reference
 
-**Model:** Academic coauthor + Codex workflow layer
+**Model:** Academic coauthor + ChatGPT agent workflow
 
 ---
 
@@ -81,7 +81,7 @@ For experimental work:
 - Work in `explorations/` folder
 - 60/100 quality threshold (vs. 80/100 for production)
 - No plan needed — just a research value check
-- See `.codex/rules/content-standards.md`
+- See `08-rule-content-standards.md`
 
 ---
 

@@ -243,7 +243,7 @@ All skills in the reference below work without pipeline context when invoked dir
 
 ### Compaction Discipline
 
-Borrowed from Goldsmith-Pinkham's ChatGPT/Codex for Economists workflow:
+Borrowed from Goldsmith-Pinkham's ChatGPT for Economists workflow:
 
 - **Manual `/compact` before natural stopping points**, not at the threshold. You control what gets summarized.
 - **Aim for 5–10 turn focused sessions.** Long sessions drift; short, scoped sessions keep output sharp.
@@ -257,7 +257,7 @@ Run `/checkpoint`. It handles:
 1. Auto-memory updates (user corrections, project state, references, user profile)
 2. `SESSION_REPORT.md` append per `logging.md`
 3. `quality_reports/research_journal.md` append
-4. (Optional) Obsidian project note if `.codex/state/obsidian-config.md` is configured
+4. (Optional) Obsidian project note if `knowledge/state/obsidian-config.md` is configured
 
 Also confirm before compaction:
 - Active plan is saved to disk in `quality_reports/plans/`
@@ -271,7 +271,7 @@ First message should be: "Resuming after compression. Last task: [read most rece
 ### Session Recovery
 
 After compression or a new session, in order:
-0. **Read the most recent checkpoint artifacts:** tail of `SESSION_REPORT.md`, tail of `quality_reports/research_journal.md`, and — if `.codex/state/obsidian-config.md` exists and Obsidian MCP is connected — the latest project-note journal entry
-1. Read `AGENTS.md` + most recent plan in `quality_reports/plans/`
+0. **Read the most recent checkpoint artifacts:** tail of `SESSION_REPORT.md`, tail of `quality_reports/research_journal.md`, and — if `knowledge/state/obsidian-config.md` exists and Obsidian MCP is connected — the latest project-note journal entry
+1. Read the GPT instructions + most recent plan in `quality_reports/plans/`
 2. Check `git log --oneline -10` and `git diff`
 3. State what you understand the current task to be

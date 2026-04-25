@@ -15,7 +15,7 @@ When `/review --peer [journal]` is invoked:
 1. **Editor reads the paper** → desk review (reject or send to referees)
 2. **Editor selects referees** → draws dispositions and pet peeves from the journal's **Referee pool**
 3. **Profile found below** → referees calibrate using the full profile
-4. **Profile NOT found** → referees use the journal name + .codex/references/domain-profile.md to adapt (still better than generic)
+4. **Profile NOT found** → referees use the journal name + 03-domain-profile.md to adapt (still better than generic)
 5. **No journal specified** → generic top-field referee behavior
 
 ### Referee Pool Field

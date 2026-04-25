@@ -36,5 +36,5 @@ Referee reports arrive (real, not simulated)
 - This uses the same agents but in a targeted way — not a full pipeline restart
 - Each comment gets its own routing — a single referee report may trigger multiple agent pairs
 - The response letter maps each referee comment to the specific change made
-- DISAGREE items are always flagged for user review — ChatGPT/Codex never autonomously pushes back on referees
+- DISAGREE items are always flagged for user review — ChatGPT never autonomously pushes back on referees
 - The Orchestrator tracks which comments are resolved and which are pending
